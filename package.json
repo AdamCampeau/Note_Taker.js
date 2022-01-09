@@ -1,14 +1,24 @@
 {
-  "name": "note-taker",
+  "name": "note_taker",
   "version": "1.0.0",
-  "description": "",
+  "description": "express.js",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
-  "author": "",
+  "author": "Adam Campeau",
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AdamCampeau/Note_Taker.js.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/AdamCampeau/Note_Taker.js/issues"
+  },
+  "homepage": "https://github.com/AdamCampeau/Note_Taker.js/blob/main/README.md" 
 }
