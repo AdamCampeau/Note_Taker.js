@@ -11,16 +11,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'))
 
-
 app.listen(PORT, () => console.log(`Now listening on http://localhost:${PORT}`));
-
 
 app.get("/api/notes", (req, res) => {
     fs.readFile('db/db.json', 'utf-8', (err, data) => {
         res.json(JSON.parse(data))
     })
 });
-
 
 app.post("/api/notes", (req, res) => {
     var newNote = {
@@ -40,7 +37,15 @@ app.post("/api/notes", (req, res) => {
 });
 
 app.delete("/api/notes/:id", (req, res) => {
-    
+    var deleted = req.params.id
+    fs.readFile('db/db.json', 'utf-8', (err, data) => {
+        var currentDB = JSON.parse(data)
+        var newDB = currentDB.filter(item => item.id !== deleted)
+        fs.writeFile('./db/db.json', JSON.stringify(newDB), err => {
+            err ? console.log(err) : console.log("Note Deleted");
+        })
+        res.sendFile(path.join(__dirname, "/public/notes.html"));
+    })
 });
 
 app.get("/notes", function (req, res) {
