@@ -5,12 +5,15 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "watch": "nodemon server.js"
   },
   "author": "Adam Campeau",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "nodemon": "^2.0.15",
+    "uuid": "^8.3.2"
   },
   "repository": {
     "type": "git",
@@ -20,5 +23,5 @@
   "bugs": {
     "url": "https://github.com/AdamCampeau/Note_Taker.js/issues"
   },
-  "homepage": "https://github.com/AdamCampeau/Note_Taker.js/blob/main/README.md" 
+  "homepage": "https://github.com/AdamCampeau/Note_Taker.js/blob/main/README.md"
 }
